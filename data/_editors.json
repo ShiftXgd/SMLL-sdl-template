@@ -10,18 +10,18 @@
         "link": "https://www.youtube.com/@WimpieBok"
     },
     {
-        "role": "helper",
-        "name": "List Helper",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        "role": "Admin",
+        "name": "Mesayokin",
+        "link": "https://www.youtube.com/@Mesayokin"
     },
     {
         "role": "trial",
         "name": "Trial List Helper",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        "link": "https://www.youtube.com/@Mesayokin"
     },
     {
         "role": "dev",
         "name": "List Coder",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        "link": "https://www.youtube.com/@Mesayokin"
     }
 ]
