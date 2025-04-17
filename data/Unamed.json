@@ -1,30 +1,18 @@
 {
-    "id": 57436521,
-    "name": "Balls 2",
-    "author": "Wimpiebok",
-    "creators": ["Wimpiebok"],
-    "verifier": "Wimpiebok",
-    "verification": "https://www.youtube.com/watch?v=PSdbqnc6Rzs",
+    "id": 117222900,
+    "name": "Unamed",
+    "author": "Slippedcake",
+    "creators": ["Slippedcake"],
+    "verifier": "Slippedcake",
+    "verification": "https://youtu.be/9P4nu1SIsp4?si=2MRFrfDRbtnCOFcT",
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
         {
             "user": "Shift",
-            "link": "https://www.youtube.com/watch?v=0k3Ugc-Gv2U",
+            "link": "https://youtu.be/W-IZNacFlrE",
             "percent": 100,
             "hz": 360
-        },
-        {
-            "user": "Username",
-            "link": "https://www.youtube.com/watch?v=hIJyaV0SiLw",
-            "percent": 100,
-            "hz": 120
-        },
-        {
-            "user": "Beli9002",
-            "link": "https://www.youtube.com/watch?v=kdcCTfgjyTQ",
-            "percent": 100,
-            "hz": 120
         }
     ]
 }
