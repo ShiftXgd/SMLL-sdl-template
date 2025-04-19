@@ -1,0 +1,17 @@
+{
+    "id": 113098647,
+    "name": "Back On Trash",
+    "author": "Aprulus",
+    "creators": ["Aprulus"],
+    "verifier": "Aprulus",
+    "verification": "https://www.youtube.com/watch?v=UF0hFLx-cA8",
+    "percentToQualify": "100",
+    "password": "Free to copy",
+    "records": [
+        {
+            "user": "Shift",
+            "link": "https://www.youtube.com/watch?v=-sL8aaUXH5I",
+            "percent": 100,
+            "hz": 360
+        }
+}
