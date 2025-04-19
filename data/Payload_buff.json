@@ -13,6 +13,12 @@
             "link": "https://youtu.be/PWM7IbTC90U",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "Aprulus",
+            "link": "https://www.youtube.com/watch?v=D1rFfXJid3s",
+            "percent": 100,
+            "hz": 60
         }
     ]
 }
