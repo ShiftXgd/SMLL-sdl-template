@@ -1,28 +1,22 @@
 {
-    "id": 114582668,
-    "name": "Peepee",
-    "author": "Wimpiebok [SILLY]",
-    "creators": ["Wimpiebok [SILLY]"],
-    "verifier": "Wimpiebok [SILLY]",
-    "verification": "https://www.youtube.com/watch?v=zJE5ehJwZR8",
+    "id": 57436521,
+    "name": "Balls 2",
+    "author": "Wimpiebok",
+    "creators": ["Wimpiebok"],
+    "verifier": "Wimpiebok",
+    "verification": "https://www.youtube.com/watch?v=PSdbqnc6Rzs",
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
         {
             "user": "Shift",
-            "link": "https://www.youtube.com/watch?v=3GqXGOgugtQ",
+            "link": "https://www.youtube.com/watch?v=0k3Ugc-Gv2U",
             "percent": 100,
             "hz": 360
         },
         {
             "user": "Username",
-            "link": "https://www.youtube.com/watch?v=WeinmWHXlaU",
-            "percent": 100,
-            "hz": 120
-        },
-        {
-            "user": "Joda",
-            "link": "https://www.youtube.com/watch?v=F6wxt812wY4",
+            "link": "https://www.youtube.com/watch?v=hIJyaV0SiLw",
             "percent": 100,
             "hz": 120
         },
@@ -31,18 +25,6 @@
             "link": "https://www.youtube.com/watch?v=kdcCTfgjyTQ",
             "percent": 100,
             "hz": 120
-        },
-        {
-            "user": "Slippedcake",
-            "link": "https://www.youtube.com/watch?v=P1gvC4-ppfk",
-            "percent": 100,
-            "hz": 120
-        },
-        {
-            "user": "Aprulus",
-            "link": "https://www.youtube.com/watch?v=HpGNCzACflo",
-            "percent": 100,
-            "hz": 360
         }
     ]
 }
