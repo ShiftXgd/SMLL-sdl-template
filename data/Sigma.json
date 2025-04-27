@@ -1,24 +1,30 @@
 {
-    "id": 117298473,
-    "name": "Sigma",
-    "author": "[ILL] zInkObbyCMYT ",
-    "creators": ["[ILL] zInkObbyCMYT "],
-    "verifier": "[ILL] zInkObbyCMYT ",
-    "verification": "https://youtu.be/HavqrvEocFw?si=bJ2qA3sOpZGuW24Y",
+    "id": 57436521,
+    "name": "Balls 2",
+    "author": "Wimpiebok",
+    "creators": ["Wimpiebok"],
+    "verifier": "Wimpiebok",
+    "verification": "https://www.youtube.com/watch?v=PSdbqnc6Rzs",
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
         {
-            "user": "Beli9002",
-            "link": "https://youtu.be/MoLs199a45Y?si=_E4yN0PEVrZMsIBp",
+            "user": "Shift",
+            "link": "https://www.youtube.com/watch?v=0k3Ugc-Gv2U",
+            "percent": 100,
+            "hz": 360
+        },
+        {
+            "user": "Username",
+            "link": "https://www.youtube.com/watch?v=hIJyaV0SiLw",
             "percent": 100,
             "hz": 120
         },
         {
-            "user": "Krzak",
-            "link": "https://youtu.be/CHYcNPqVnQY",
+            "user": "Beli9002",
+            "link": "https://www.youtube.com/watch?v=kdcCTfgjyTQ",
             "percent": 100,
-            "hz": 360
+            "hz": 120
         }
     ]
 }
