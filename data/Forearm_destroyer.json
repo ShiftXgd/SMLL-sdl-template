@@ -25,6 +25,12 @@
             "link": "https://www.youtube.com/watch?v=HpGNCzACflo",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "Bartczłek",
+            "link": "https://youtu.be/Ya6ErBXPd3A",
+            "percent": 100,
+            "hz": 60
         }
     ]
 }
