@@ -1,0 +1,44 @@
+[
+  {
+    "id": "all",
+    "name": "All Packs",
+    "color": "#1976d2"
+  },
+  {
+    "id": "top5",
+    "name": "Top 5 Pack",
+    "color": "#43a047"
+  },
+  {
+    "id": "top10",
+    "name": "Top 10 Pack",
+    "color": "#fb8c00"
+  },
+  {
+    "id": "toiletpack",
+    "name": "Toilet Pack",
+    "color": "#8e24aa",
+    "noteforcolor": "You can change the color of the pack to a hex color of your choice, e.g. #8e24aa",
+    "please read this": "To add a level to this pack, change the 'id' of the pack to your name, and add your name to the 'inwhatpack' array in a level's JSON file you want to add to the pack in the data folder, e.g. 'inwhatpack': ['test']"
+  },
+  {
+    "id": "spamtrilogy",
+    "name": "Spam Trilogy Pack",
+    "color": "#7d7dff"
+  },
+  {
+    "id": "beginnerpack",
+    "name": "Beginner Pack",
+    "color": "#32cd32"
+  },
+  {
+    "id": "intermediatepack",
+    "name": "Intermediate Pack",
+    "color": "#5494da"
+  },
+  {
+    "id": "propack",
+    "name": "Pro Pack",
+    "color": "#cc0000"
+  }
+] 

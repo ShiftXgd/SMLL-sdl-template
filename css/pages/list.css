@@ -126,3 +126,19 @@
 .page-list .meta .editors li a:hover {
     text-decoration: underline;
 }
+.page-list .list-container input[type="text"] {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+    width: 100%;
+    background: var(--color-background);
+    color: var(--color-on-background);
+    box-sizing: border-box;
+    transition: border 0.2s;
+}
+.page-list .list-container input[type="text"]:focus {
+    outline: none;
+    border: 1.5px solid var(--color-primary);
+}

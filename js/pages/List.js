@@ -5,6 +5,7 @@ import { fetchEditors, fetchList } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
+import PackSelect from '../components/PackSelect.js';
 
 const roleIconMap = {
     owner: "crown",
@@ -15,15 +16,25 @@ const roleIconMap = {
 };
 
 export default {
-    components: { Spinner, LevelAuthors },
+    components: { Spinner, LevelAuthors, PackSelect },
     template: `
         <main v-if="loading">
             <Spinner></Spinner>
         </main>
         <main v-else class="page-list">
+            <teleport to="#pack-select-container">
+                <PackSelect v-if="packs.length" v-model="selectedPack" :options="packs" />
+            </teleport>
             <div class="list-container">
-                <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list">
+                <input
+                    v-model="search"
+                    class="type-label-lg"
+                    style="width:100%;margin-bottom:1rem;padding:0.5rem 1rem;border-radius:0.5rem;border:1px solid #ccc;"
+                    placeholder="Search levels..."
+                    type="text"
+                />
+                <table class="list" v-if="filteredList">
+                    <tr v-for="([level, err], i) in filteredList" :key="level?.id || err">
                         <td class="rank">
                             <p v-if="i + 1 <= 150" class="type-label-lg">#{{ i + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
@@ -77,7 +88,7 @@ export default {
                     </table>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
-                    <p>(ノಠ益ಠ)ノ彡┻━┻</p>
+                    <p>No levels found bruh (ノಠ益ಠ)ノ彡┻━┻</p>
                 </div>
             </div>
             <div class="meta-container">
@@ -134,15 +145,36 @@ export default {
         selected: 0,
         errors: [],
         roleIconMap,
-        store
+        store,
+        search: '',
+        packs: [],
+        selectedPack: null,
     }),
     computed: {
         level() {
-            return this.list[this.selected][0];
+            return this.filteredList[this.selected]?.[0];
+        },
+        filteredList() {
+            let filtered = this.list;
+            if (this.selectedPack === 'all') {
+                // Show all levels
+                filtered = this.list;
+            } else if (this.selectedPack === 'top5') {
+                filtered = this.list.slice(0, 5);
+            } else if (this.selectedPack === 'top10') {
+                filtered = this.list.slice(0, 10);
+            } else if (this.selectedPack) {
+                filtered = filtered.filter(([level]) => level && Array.isArray(level.inwhatpack) && level.inwhatpack.includes(this.selectedPack));
+            }
+            if (this.search) {
+                const q = this.search.toLowerCase();
+                filtered = filtered.filter(([level]) => level && level.name.toLowerCase().includes(q));
+            }
+            return filtered;
         },
         video() {
-            if (!this.level.showcase) {
-                return embed(this.level.verification);
+            if (!this.level?.showcase) {
+                return embed(this.level?.verification);
             }
 
             return embed(
@@ -156,7 +188,14 @@ export default {
         // Hide loading spinner
         this.list = await fetchList();
         this.editors = await fetchEditors();
-
+        // Fetch packs
+        try {
+            const packsRes = await fetch('/data/packs.json');
+            this.packs = await packsRes.json();
+            if (this.packs.length > 0) this.selectedPack = this.packs[0].id;
+        } catch (e) {
+            this.packs = [];
+        }
         // Error handling
         if (!this.list) {
             this.errors = [

@@ -1,6 +1,7 @@
 .nav {
     display: flex;
     column-gap: 2rem;
+    position: relative;
 }
 .nav .nav__tab {
     padding-top: 4px;
@@ -51,4 +52,146 @@
 }
 .nav .nav__actions .nav__cta:hover:not(:active) {
     transform: translateY(-2px);
+}
+.nav .pack-selector {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    z-index: 2;
+}
+
+.nav .pack-selector select {
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid white;
+    font-size: 1.1rem;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    appearance: none;  /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 0.65rem auto;
+    padding-right: 2.5rem;
+}
+
+.nav .pack-selector select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav .pack-selector select option {
+    background: white;
+    color: var(--color-primary);
+}
+
+.nav .pack-selector select option:hover,
+.nav .pack-selector select option:checked,
+.nav .pack-selector select option:focus {
+    background: var(--color-primary);
+    color: white;
+}
+
+.nav .custom-select {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 160px;
+    font-family: 'Lexend Deca', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.nav .custom-select__selected span {
+    display: block;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+}
+
+.nav .custom-select__selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: 'Lexend Deca', Arial, sans-serif;
+    font-weight: 700;
+    min-width: 160px;
+    max-width: 180px;
+    user-select: none;
+    transition: border 0.2s;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.nav .custom-select__selected svg {
+    margin-left: 0.5rem;
+    fill: white;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+.nav .custom-select.open .custom-select__selected,
+.nav .custom-select__selected:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+.nav .custom-select__dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background: white;
+    color: var(--color-primary);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    margin-top: 0;
+    padding: 0;
+    z-index: 100;
+    font-family: 'Lexend Deca', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.nav .custom-select__dropdown li {
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    transition: background 0.15s, color 0.15s;
+    font-family: 'Lexend Deca', Arial, sans-serif;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.nav .custom-select__dropdown li.selected,
+.nav .custom-select__dropdown li:hover {
+    background: var(--color-primary);
+    color: white;
 }
