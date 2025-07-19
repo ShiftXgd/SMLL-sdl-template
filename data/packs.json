@@ -16,7 +16,7 @@
   },
   {
     "id": "toiletpack",
-    "name": "Toilet Pack",
+    "name": "Toilet Trilogy Pack",
     "color": "#8e24aa",
     "noteforcolor": "You can change the color of the pack to a hex color of your choice, e.g. #8e24aa",
     "please read this": "To add a level to this pack, change the 'id' of the pack to your name, and add your name to the 'inwhatpack' array in a level's JSON file you want to add to the pack in the data folder, e.g. 'inwhatpack': ['test']"
