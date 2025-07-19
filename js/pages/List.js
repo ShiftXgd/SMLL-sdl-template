@@ -13,6 +13,7 @@ const roleIconMap = {
     helper: "user-shield",
     dev: "code",
     trial: "user-lock",
+    toni: "toni"
 };
 
 export default {
