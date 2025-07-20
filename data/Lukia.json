@@ -8,6 +8,12 @@
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
+         {
+            "user": "Aprulus",
+            "link": "AF1QipP2GnDjAIvFjTVN9Vo4XAFS_AcO1iKAqglII1wnrjE",
+            "percent": 100,
+            "hz": 360
+        },
         {
             "user": "Shift",
             "link": "https://youtu.be/yYQ_ys_gy1w",
