@@ -40,5 +40,10 @@
     "id": "propack",
     "name": "Pro Pack",
     "color": "#cc0000"
+  },
+  {
+    "id": "robotpack",
+    "name": "Robot Pack",
+    "color": "#ffffff"
   }
 ] 
