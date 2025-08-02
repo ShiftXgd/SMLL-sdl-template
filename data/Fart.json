@@ -43,6 +43,11 @@
             "link": "https://youtu.be/vj33Mx_-v9w",
             "percent": 100,
             "hz": 360
+        } {
+            "user": "Grump",
+            "link": "https://www.youtube.com/watch?v=Fo7WznqaLsQ",
+            "percent": 100,
+            "hz": 360
         }
     ],
     "inwhatpack": ["toiletpack"]
