@@ -37,6 +37,12 @@
             "link": "https://www.youtube.com/watch?v=0KT23uO3h4Y",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "Gawlyx",
+            "link": "https://www.youtube.com/watch?v=FwULCR46kHQ",
+            "percent": 100,
+            "hz": 360
         }
     ],
     "inwhatpack": ["toiletpack", "intermediatepack"]
