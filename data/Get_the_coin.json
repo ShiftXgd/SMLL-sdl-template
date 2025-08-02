@@ -43,6 +43,12 @@
             "link": "https://youtu.be/0X-OIp3sRA4",
             "percent": 100,
             "hz": 120
+        },
+        {
+            "user": "Grump",
+            "link": "https://www.youtube.com/watch?v=Fo7WznqaLsQ",
+            "percent": 100,
+            "hz": 360
         }
     ]
 }
