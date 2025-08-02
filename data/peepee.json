@@ -25,6 +25,12 @@
             "link": "https://youtu.be/NloneaWQimA",
             "percent": 100,
             "hz": 60
+        },
+        {
+            "user": "yen",
+            "link": "https://youtu.be/YCeBQdwdmOg",
+            "percent": 100,
+            "hz": 60
         }
     ],
     "inwhatpack": ["toiletpack", "beginnerpack"]
