@@ -13,7 +13,13 @@
             "link": "https://youtu.be/EDeOTh2yvP0?si=gdvpNnGLU_QJFQRI",
             "percent": 100,
             "hz": 60
+        },
+        {
+            "user": "Grump",
+            "link": "https://youtu.be/44mqVQoQVq8?si=etD-3ofZzb-R5l9k",
+            "percent": 100,
+            "hz": 60
         }
-    ],
+    ]
     "inwhatpack": ["scapespack"]
 }
