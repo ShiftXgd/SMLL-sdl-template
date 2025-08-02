@@ -25,6 +25,12 @@
             "link": "https://www.youtube.com/watch?v=HpGNCzACflo",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "yen",
+            "link": "https://youtu.be/OnVvbbbqCvM",
+            "percent": 100,
+            "hz": 360
         }
     ]
 }
