@@ -13,6 +13,12 @@
             "link": "https://youtu.be/MoLs199a45Y?si=LB3N_q0qu0VBvnZd",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "Grump",
+            "link": "https://www.youtube.com/watch?v=5te3k3kWxlw",
+            "percent": 100,
+            "hz": 60
         }
     ],
     "inwhatpack": ["intermediatepack"]
