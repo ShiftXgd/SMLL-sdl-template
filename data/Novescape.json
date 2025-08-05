@@ -25,6 +25,12 @@
             "link": "https://youtu.be/sW8OhFHERz8",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "Grump",
+            "link": "https://youtu.be/aZ6oE6mRJdM?si=k5F0jdktioebUzXe",
+            "percent": 100,
+            "hz": 360
         }
     ],
     "inwhatpack": ["propack", "scapespack"]
