@@ -8,6 +8,12 @@
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
+        {
+            "user": "Grump",
+            "link": "https://www.youtube.com/watch?v=kvoucdvQ8Hs",
+            "percent": 100,
+            "hz": 60
+        }
     ],
     "inwhatpack": []
 }
