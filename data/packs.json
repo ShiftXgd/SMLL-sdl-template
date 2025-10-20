@@ -45,5 +45,10 @@
     "id": "scapespack",
     "name": "Scapes Pack",
     "color": "#555555"
-  }
+  },
+  {
+    "id": "invispack",
+    "name": "Invisible pack",
+    "color": "#FFFFFF"
+  }  
 ] 
