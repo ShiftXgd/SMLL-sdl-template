@@ -8,5 +8,11 @@
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
-    ]
+        {
+            "user": "Grump",
+            "link": "https://youtu.be/TAknD-8wJcs?si=TnJOtSqrlU56T_RJ",
+            "percent": 100,
+            "hz": 60
+        }
+    ],
 }
