@@ -49,6 +49,12 @@
             "link": "https://www.youtube.com/watch?v=Fo7WznqaLsQ",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "Slippedcake",
+            "link": "https://youtu.be/ZgabKssfzfo?si=zR4mKCwAZ-gi_-wB",
+            "percent": 100,
+            "hz": 60
         }
     ],
     "inwhatpack": ["toiletpack", "intermediatepack"]
