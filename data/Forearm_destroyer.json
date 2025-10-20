@@ -49,6 +49,12 @@
             "link": "https://www.youtube.com/watch?v=V6RfkaMKZBI",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "Slippedcake",
+            "link": "https://youtu.be/_ZL-hQAuuZc?si=tWPMsj1W1ZRlsE7f",
+            "percent": 100,
+            "hz": 60
         }
     ]
 }
