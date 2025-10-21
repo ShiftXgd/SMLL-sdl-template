@@ -142,3 +142,14 @@
     outline: none;
     border: 1.5px solid var(--color-primary);
 }
+
+.list .divider-row .divider-cell {
+    text-align: right;
+    font-weight: 700;
+    padding: 0.5rem 0;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    background: transparent;
+    font-family: Lexend Deca, sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
