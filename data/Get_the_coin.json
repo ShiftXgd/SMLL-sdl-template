@@ -55,6 +55,12 @@
             "link": "https://youtu.be/gfIbK95hC3w",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "Yen",
+            "link": "https://www.youtube.com/watch?v=zjhToCAaxnU",
+            "percent": 100,
+            "hz": 60
         }
     ]
 }
