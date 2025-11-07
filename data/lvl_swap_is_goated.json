@@ -37,6 +37,12 @@
             "link": "https://www.youtube.com/watch?v=s5bZps_dcc0",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "Yen",
+            "link": "https://www.youtube.com/watch?v=zjhToCAaxnU",
+            "percent": 100,
+            "hz": 60
         }
     ],
     "inwhatpack": []
