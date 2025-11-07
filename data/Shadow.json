@@ -8,9 +8,15 @@
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
-{
+        {
             "user": "Grump",
             "link": "https://www.youtube.com/watch?v=cF0d9EUztXw",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "Yen",
+            "link": "https://www.youtube.com/watch?v=zjhToCAaxnU",
             "percent": 100,
             "hz": 60
         }
