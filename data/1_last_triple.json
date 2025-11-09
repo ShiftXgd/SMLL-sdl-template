@@ -61,6 +61,12 @@
             "link": "https://www.youtube.com/watch?v=oOaYyh2lqxQ",
             "percent": 100,
             "hz": 360
+        },
+        {
+            "user": "szymek",
+            "link": "https://www.youtube.com/watch?v=VKUpJOxFfOg,
+            "percent": 100,
+            "hz": 60
         }
     ],
     "inwhatpack": []
