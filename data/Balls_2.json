@@ -55,6 +55,12 @@
             "link": "https://youtu.be/ZgabKssfzfo?si=zR4mKCwAZ-gi_-wB",
             "percent": 100,
             "hz": 60
+        },
+        {
+            "user": "szymek",
+            "link": "https://www.youtube.com/watch?v=pR4GXSb5p9w",
+            "percent": 100,
+            "hz": 60
         }
     ],
     "inwhatpack": ["toiletpack", "intermediatepack"]
