@@ -25,6 +25,12 @@
             "link": "https://www.youtube.com/watch?v=2He4PkWb5uE",
             "percent": 100,
             "hz": 60
+        },
+        {
+            "user": "szymek",
+            "link": "https://www.youtube.com/watch?v=nP2x2nXpvlc",
+            "percent": 100,
+            "hz": 60
         }
     ],
     "inwhatpack": ["propack"]
