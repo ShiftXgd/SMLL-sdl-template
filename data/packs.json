@@ -50,5 +50,10 @@
     "id": "invispack",
     "name": "Invisible pack",
     "color": "#FFFFFF"
-  }  
+  },
+  {
+    "id": "___ ___ pack",
+    "name": "___ ___ Pack",
+    "color": "#FFD1DF"
+  }
 ] 
