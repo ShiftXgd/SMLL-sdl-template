@@ -37,7 +37,13 @@
             "link": "https://www.youtube.com/watch?v=_JZ0ceczqY4",
             "percent": 100,
             "hz": 60
-        }
+        },
+        {
+            "user": "Ivanch69",
+            "link": "https://www.youtube.com/watch?v=NKoQ9MfHups",
+            "percent": 100,
+            "hz": 360
+        },
     ],
     "inwhatpack": ["propack", "scapespack"]
 }
