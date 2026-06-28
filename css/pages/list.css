@@ -144,12 +144,13 @@ main.page-list {
     grid-template-columns: max-content 1fr;
     grid-auto-rows: max-content;
     gap: 1rem;
+    margin-top: 20px;
 }
-
 .page-list .level-detail .video {
     aspect-ratio: 16/9;
     width: 100%;
     max-width: 56rem;
+    margin-top: 20px;
 }
 
 .page-list .level-detail .stats {
@@ -158,6 +159,7 @@ main.page-list {
     flex-wrap: wrap;
     text-align: center;
     gap: 2rem;
+    margin-top: 20px;
 }
 
 .page-list .level-detail .stats li {
@@ -165,6 +167,7 @@ main.page-list {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    margin-top: 10px;
 }
 
 .page-list .level-detail .records {
@@ -337,4 +340,45 @@ main.page-list {
     50%  { transform: scaleY(1); opacity: 1; color: #4444ff; }
     75%  { transform: scaleY(0); opacity: 0; color: #ffaa00; }
     100% { transform: scaleY(1); opacity: 1; color: #ff44ff; }
+}
+
+/* Container holding both columns */
+.level-detail__split-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem; /* Spacing between the columns */
+    width: 100%;
+}
+
+/* Left side setup (takes up slightly more space for the video) */
+.level-detail__left-col {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Right side setup (takes up the remaining space for records) */
+.level-detail__right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* Keeps the table scrollable if there are dozens of completions */
+    max-height: 500px; 
+    overflow-y: auto; 
+}
+
+/* Responsive design: Stack them vertically if the screen is too narrow */
+@media (max-width: 768px) {
+    .level-detail__split-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .level-detail__right-col {
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+
+.idfkwhattonamethis {
+    margin-bottom: 10px;
 }

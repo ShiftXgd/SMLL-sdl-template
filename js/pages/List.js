@@ -101,57 +101,67 @@ export default {
                         v-if="level && selectedPath === level.path"
                         class="level-detail"
                     >
-                        <h1>{{ level.name }}</h1>
-                        <LevelAuthors
-                            :author="level.author"
-                            :creators="level.creators"
-                            :verifier="level.verifier"
-                        />
-                        <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
-                        <ul class="stats">
-                            <li>
-                                <div class="type-title-sm">Points when completed</div>
-                                <p>{{ score(globalRank(level.path), 100, level.percentToQualify) }}</p>
-                            </li>
-                            <li>
-                                <div class="type-title-sm">ID</div>
-                                <p>{{ level.id }}</p>
-                            </li>
-                            <li>
-                                <div class="type-title-sm">Password</div>
-                                <p>{{ level.password || 'Free to Copy' }}</p>
-                            </li>
-                        </ul>
-                        <h2>Records</h2>
-                        <p v-if="globalRank(level.path) <= 75">
-                            <strong>{{ level.percentToQualify }}%</strong> or better to qualify
-                        </p>
-                        <p v-else-if="globalRank(level.path) <= 150">
-                            <strong>100%</strong> or better to qualify
-                        </p>
-                        <p v-else>This level does not accept new records.</p>
-                        <table class="records">
-                            <tr v-for="record in level.records" class="record">
-                                <td class="percent">
-                                    <p>{{ record.percent }}%</p>
-                                </td>
-                                <td class="user">
-                                    <a :href="record.link" target="_blank" class="type-label-lg">
-                                        <PlayerName :name="record.user" />
-                                    </a>
-                                </td>
-                                <td class="mobile">
-                                    <img
-                                        v-if="record.mobile"
-                                        :src="'/assets/phone-landscape' + (store.dark ? '-dark' : '') + '.svg'"
-                                        alt="Mobile"
-                                    />
-                                </td>
-                                <td class="hz">
-                                    <p>{{ record.hz }}Hz</p>
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="level-detail__split-container">
+                            
+                            <div class="level-detail__left-col">
+                                <h1>{{ level.name }}</h1>
+                                <LevelAuthors
+                                    :author="level.author"
+                                    :creators="level.creators"
+                                    :verifier="level.verifier"
+                                />
+                                <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+                                <ul class="stats">
+                                    <li>
+                                        <div class="type-title-sm">Points when completed</div>
+                                        <p>{{ score(globalRank(level.path), 100, level.percentToQualify) }}</p>
+                                    </li>
+                                    <li>
+                                        <div class="type-title-sm">ID</div>
+                                        <p>{{ level.id }}</p>
+                                    </li>
+                                    <li>
+                                        <div class="type-title-sm">Password</div>
+                                        <p>{{ level.password || 'Free to Copy' }}</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="level-detail__right-col">
+                                <h2 class="idfkwhattonamethis">Records</h2>
+                                <p v-if="globalRank(level.path) <= 75">
+                                    <strong>{{ level.percentToQualify }}%</strong> or better to qualify
+                                </p>
+                                <p v-else-if="globalRank(level.path) <= 150">
+                                    <strong>100%</strong> or better to qualify
+                                </p>
+                                <p v-else>This level does not accept new records.</p>
+                                
+                                <table class="records">
+                                    <tr v-for="record in level.records" class="record">
+                                        <td class="percent">
+                                            <p>{{ record.percent }}%</p>
+                                        </td>
+                                        <td class="user">
+                                            <a :href="record.link" target="_blank" class="type-label-lg">
+                                                <PlayerName :name="record.user" />
+                                            </a>
+                                        </td>
+                                        <td class="mobile">
+                                            <img
+                                                v-if="record.mobile"
+                                                :src="'/assets/phone-landscape' + (store.dark ? '-dark' : '') + '.svg'"
+                                                alt="Mobile"
+                                            />
+                                        </td>
+                                        <td class="hz">
+                                            <p>{{ record.hz }}Hz</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
                     </section>
                 </template>
             </div>
