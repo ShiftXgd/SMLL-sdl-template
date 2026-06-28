@@ -2,20 +2,25 @@ import routes from './routes.js';
 
 export const store = Vue.reactive({
     dark: JSON.parse(localStorage.getItem('dark')) || false,
+    listMode: localStorage.getItem('listMode') || 'classic',
     toggleDark() {
         this.dark = !this.dark;
         localStorage.setItem('dark', JSON.stringify(this.dark));
+    },
+    setListMode(mode) {
+        this.listMode = mode;
+        localStorage.setItem('listMode', mode);
     },
 });
 
 const app = Vue.createApp({
     data: () => ({ store }),
 });
+
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHashHistory(),
     routes,
 });
 
 app.use(router);
-
 app.mount('#app');

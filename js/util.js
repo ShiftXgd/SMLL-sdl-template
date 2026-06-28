@@ -17,6 +17,11 @@ export function getThumbnailFromId(id) {
     return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
 }
 
+export function getThumbnailFromUrl(url) {
+    const id = getYoutubeIdFromUrl(url ?? '');
+    return id ? getThumbnailFromId(id) : null;
+}
+
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 export function shuffle(array) {
     let currentIndex = array.length, randomIndex;

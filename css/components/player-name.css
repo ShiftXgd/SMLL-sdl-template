@@ -1,0 +1,28 @@
+.player-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.player-flag {
+    height: 1.25rem;
+    width: auto;
+    border-radius: 0.125rem;
+    flex-shrink: 0;
+}
+
+.player-name--sm .player-flag {
+    height: 1rem;
+}
+
+.player-name--lg .player-flag {
+    height: 2rem;
+}
+
+.page-leaderboard .player h1 .player-flag {
+    height: 2.25rem;
+}
+
+.page-list .level-authors .player-flag {
+    height: 1.5rem;
+}

@@ -1,11 +1,14 @@
 import { fetchLeaderboard } from '../content.js';
+import { loadPlayerFlags } from '../playerFlags.js';
 import { localize } from '../util.js';
 
 import Spinner from '../components/Spinner.js';
+import PlayerName from '../components/PlayerName.js';
 
 export default {
     components: {
         Spinner,
+        PlayerName,
     },
     data: () => ({
         leaderboard: [],
@@ -37,7 +40,7 @@ export default {
                             </td>
                             <td class="user" :class="{ 'active': selected == i }">
                                 <button @click="selected = i">
-                                    <span class="type-label-lg">{{ ientry.user }}</span>
+                                    <PlayerName class="type-label-lg" :name="ientry.user" />
                                 </button>
                             </td>
                         </tr>
@@ -45,7 +48,7 @@ export default {
                 </div>
                 <div class="player-container">
                     <div class="player">
-                        <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
+                        <h1>#{{ selected + 1 }} <PlayerName size="lg" :name="entry.user" /></h1>
                         <h3>{{ entry.total }}</h3>
                         <div v-if="completedPacks.length" class="user-packs" style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
                             <span v-for="pack in completedPacks" :key="pack.id" class="pack-badge type-label-lg" :style="{ background: pack.color || 'var(--color-primary)', color: 'white', padding: '0.4em 1em', borderRadius: '0.7em' }">{{ pack.name }}</span>
@@ -115,7 +118,10 @@ export default {
         }
     },
     async mounted() {
-        const [leaderboard, err] = await fetchLeaderboard();
+        const [[leaderboard, err]] = await Promise.all([
+            fetchLeaderboard(),
+            loadPlayerFlags(),
+        ]);
         this.leaderboard = leaderboard;
         this.err = err;
         // Fetch packs and levels
