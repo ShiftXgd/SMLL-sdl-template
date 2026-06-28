@@ -33,10 +33,10 @@ export default {
                 <div class="mode-switcher__pill">
                     <button
                         class="mode-switcher__btn"
-                        :class="{ active: store.listMode === 'casual' }"
-                        @click="switchMode('casual')"
+                        :class="{ active: store.listMode === 'classic' }"
+                        @click="switchMode('classic')"
                     >
-                        Casual
+                        Classic
                     </button>
                     <button
                         class="mode-switcher__btn"
