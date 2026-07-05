@@ -19,6 +19,12 @@
             "link": "https://www.youtube.com/watch?v=VZaOnZ36a8U",
             "percent": 100,
             "hz": 60
+        },
+        {
+            "user": "Fernandez",
+            "link": "https://youtu.be/A-PYETp4lpU",
+            "percent": 100,
+            "hz": 60
         }
     ],
     "inwhatpack": ["invispack"]
