@@ -1,5 +1,6 @@
 import { fetchLeaderboard } from '../content.js';
 import { localize } from '../util.js';
+import { score } from '../score.js';
 
 import Spinner from '../components/Spinner.js';
 
@@ -143,7 +144,14 @@ export default {
                             progressed: []
                         };
                     }
-                    userRecords[record.user].total++;
+                    // Find where the level sits on the platformer list (1-indexed rank)
+                    const levelRank = list.indexOf(level.path) + 1; 
+
+                    // Calculate exact difficulty points (Assuming 100% completion for platformer runs)
+                    const earnedPoints = score(levelRank, 100, level.percentToQualify || 100);
+
+                    // Add the points to their leaderboard profile total instead of just adding 1
+                    userRecords[record.user].total += earnedPoints;
                     
                     // Generate clean display layout right here during data assembly
                     let cleanTime = '--:--';
