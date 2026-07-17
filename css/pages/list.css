@@ -80,7 +80,7 @@ main.page-list {
 }
 
 .page-list .level-row__rank {
-    margin: 0;
+    margin-right: 98% !important;
     opacity: 0.7;
 }
 
