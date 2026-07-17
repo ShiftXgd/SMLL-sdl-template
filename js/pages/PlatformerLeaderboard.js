@@ -2,6 +2,8 @@ import { fetchLeaderboard } from '../content.js';
 import { localize } from '../util.js';
 import { score } from '../score.js';
 
+// IMPORT FLAG SYSTEM METHODS:
+import { loadPlayerFlags, getFlagUrl } from '../playerFlags.js'; 
 import Spinner from '../components/Spinner.js';
 
 export default {
@@ -37,7 +39,8 @@ export default {
                                 <p class="type-label-lg">{{ ientry.total }}</p>
                             </td>
                             <td class="user" :class="{ 'active': selected == i }">
-                                <button @click="selected = i">
+                                <button @click="selected = i" style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <img v-if="getFlagUrl(ientry.user)" :src="getFlagUrl(ientry.user)" :alt="ientry.user + ' flag'" style="height: 1em; border-radius: 2px;" />
                                     <span class="type-label-lg">{{ ientry.user }}</span>
                                 </button>
                             </td>
@@ -46,7 +49,11 @@ export default {
                 </div>
                 <div class="player-container">
                     <div class="player">
-                        <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
+                        <h1 style="display: flex; align-items: center; gap: 0.75rem;">
+                            #{{ selected + 1 }} 
+                            <img v-if="getFlagUrl(entry.user)" :src="getFlagUrl(entry.user)" :alt="entry.user + ' flag'" style="height: 0.8em; border-radius: 3px;" />
+                            {{ entry.user }}
+                        </h1>
                         <h3>{{ entry.total }}</h3>
                         <div v-if="completedPacks.length" class="user-packs" style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
                             <span v-for="pack in completedPacks" :key="pack.id" class="pack-badge type-label-lg" :style="{ background: pack.color || 'var(--color-primary)', color: 'white', padding: '0.4em 1em', borderRadius: '0.7em' }">{{ pack.name }}</span>
@@ -116,6 +123,9 @@ export default {
         }
     },
     async mounted() {
+        // ADDED: Triggers player flag map registration on startup
+        await loadPlayerFlags();
+
         const [leaderboard, err] = await fetchLeaderboard('platformer');
         this.leaderboard = leaderboard;
         this.err = err;
@@ -144,16 +154,10 @@ export default {
                             progressed: []
                         };
                     }
-                    // Find where the level sits on the platformer list (1-indexed rank)
                     const levelRank = list.indexOf(level.path) + 1; 
-
-                    // Calculate exact difficulty points (Assuming 100% completion for platformer runs)
                     const earnedPoints = score(levelRank, 100, level.percentToQualify || 100);
-
-                    // Add the points to their leaderboard profile total instead of just adding 1
                     userRecords[record.user].total += earnedPoints;
                     
-                    // Generate clean display layout right here during data assembly
                     let cleanTime = '--:--';
                     if (record.time !== undefined && record.time !== null) {
                         const rawSecs = parseFloat(record.time);
@@ -174,7 +178,7 @@ export default {
                         link: record.link,
                         percent: record.percent,
                         time: record.time || 0,
-                        displayTime: cleanTime // Saved directly into payload object
+                        displayTime: cleanTime
                     };
 
                     if (record.percent === 100 || !record.percent) {
@@ -192,6 +196,7 @@ export default {
         this.loading = false;
     },
     methods: {
-        localize
+        localize,
+        getFlagUrl // ADDED: Registered to methods so template system can bind flag images dynamically
     },
 };
