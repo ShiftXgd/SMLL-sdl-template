@@ -1,18 +1,18 @@
 {
-    "id": 116584126,
-    "name": "1 last triple",
-    "author": "Slippedcake",
-    "creators": ["Slippedcake"],
-    "verifier": "Slippedcake",
-    "verification": "https://www.youtube.com/watch?v=8AgL9kvKSxQ",
-    "percentToQualify": "100",
+    "id": 1,
+    "name": "Add here",
+    "author": "Placeholder",
+    "creators": ["Placeholder"],
+    "verifier": "Placeholder",
+    "verification": "https://www.youtube.com/yourlinkhere",
+    "percentToQualify": 100,
     "password": "Free to copy",
     "records": [
         {
-            "user": "Fernandez",
-            "link": "https://www.youtube.com/watch?v=Jxcxhgh6jJU",
-            "hz": 360,
-            "time": 100
+            "user": "Add here",
+            "link": "https://www.youtube.com/yourlinkhere",
+            "hz": 0,
+            "time": 0
         }
     ],
     "inwhatpack": []
