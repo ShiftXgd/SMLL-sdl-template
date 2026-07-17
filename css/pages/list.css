@@ -170,10 +170,14 @@ main.page-list {
     margin-top: 10px;
 }
 
+/* ==========================================================================
+   FIXED RECORDS TABLE STYLES
+   ========================================================================== */
 .page-list .level-detail .records {
     table-layout: fixed;
     width: 100%;
     max-width: 48rem;
+    border-collapse: collapse;
 }
 
 .page-list .level-detail .records tr td:not(:last-child) {
@@ -186,23 +190,33 @@ main.page-list {
     padding-block: 1rem;
 }
 
-.page-list .level-detail .records .user {
-    width: 100%;
+/* Give the metrics column a rigid size so the user column is pushed over uniformly */
+.page-list .level-detail .records .percent {
+    width: 6.5rem;
+    white-space: nowrap;
+    text-align: left;
 }
 
+.page-list .level-detail .records .user {
+    width: auto;
+    text-align: left;
+}
+
+.page-list .level-detail .records .mobile {
+    width: 2.5rem;
+    text-align: center;
+}
 
 .page-list .level-detail .records .hz {
+    width: 4.5rem;
     text-align: end;
 }
-
-.page-list .level-detail .records .percent
-    {
-        padding-left: 50%;
-    }
 
 .page-list .level-detail .records a:hover {
     text-decoration: underline;
 }
+
+/* ========================================================================== */
 
 .page-list .level-feed-empty {
     display: flex;

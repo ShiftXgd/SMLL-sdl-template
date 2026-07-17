@@ -10,6 +10,7 @@ export function embed(video) {
 }
 
 export function localize(num) {
+    if (num === undefined || num === null) return '0';
     return num.toLocaleString(undefined, { minimumFractionDigits: 3 });
 }
 

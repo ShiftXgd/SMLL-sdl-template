@@ -6,6 +6,7 @@ import { round, score } from './score.js';
 const dir = '/data';
 
 export async function fetchList(mode = 'classic') {
+    const dir = mode === 'platformer' ? '/platdata' : '/data';
     const listFile = mode === 'platformer' ? '_platlist.json' : '_list.json';
     const listResult = await fetch(`${dir}/${listFile}`);
     try {
@@ -58,25 +59,27 @@ export async function fetchLeaderboard(mode = 'classic') {
             return;
         }
 
-        // Verification
-        const verifier =
-            Object.keys(scoreMap).find(
-                (u) => u.toLowerCase() === level.verifier.toLowerCase(),
-            ) || level.verifier;
+        // Verification (skip for platformer)
+        if (mode !== 'platformer') {
+            const verifier =
+                Object.keys(scoreMap).find(
+                    (u) => u.toLowerCase() === level.verifier.toLowerCase(),
+                ) || level.verifier;
 
-        scoreMap[verifier] ??= {
-            verified: [],
-            completed: [],
-            progressed: [],
-        };
+            scoreMap[verifier] ??= {
+                verified: [],
+                completed: [],
+                progressed: [],
+            };
 
-        const { verified } = scoreMap[verifier];
-        verified.push({
-            rank: rank + 1,
-            level: level.name,
-            score: score(rank + 1, 100, level.percentToQualify),
-            link: level.verification,
-        });
+            const { verified } = scoreMap[verifier];
+            verified.push({
+                rank: rank + 1,
+                level: level.name,
+                score: score(rank + 1, 100, level.percentToQualify),
+                link: level.verification,
+            });
+        }
 
         // Records
         level.records.forEach((record) => {
@@ -97,8 +100,9 @@ export async function fetchLeaderboard(mode = 'classic') {
                 completed.push({
                     rank: rank + 1,
                     level: level.name,
-                    score: score(rank + 1, 100, level.percentToQualify),
+                    score: mode === 'platformer' ? 0 : score(rank + 1, 100, level.percentToQualify),
                     link: record.link,
+                    time: record.time || 0,
                 });
                 return;
             }
@@ -107,8 +111,9 @@ export async function fetchLeaderboard(mode = 'classic') {
                 rank: rank + 1,
                 level: level.name,
                 percent: record.percent,
-                score: score(rank + 1, record.percent, level.percentToQualify),
+                score: mode === 'platformer' ? 0 : score(rank + 1, record.percent, level.percentToQualify),
                 link: record.link,
+                time: record.time || 0,
             });
         });
     });
@@ -116,16 +121,18 @@ export async function fetchLeaderboard(mode = 'classic') {
     // Wrap in extra Object containing the user and total score
     const res = Object.entries(scoreMap).map(([user, scores]) => {
         const { verified, completed, progressed } = scores;
-        const total = [verified, completed, progressed]
-            .flat()
-            .reduce((prev, cur) => prev + cur.score, 0);
+        const total = mode === 'platformer' 
+            ? completed.length  // For platformer, total = number of levels completed
+            : [verified, completed, progressed]
+                .flat()
+                .reduce((prev, cur) => prev + cur.score, 0);
         return {
             user,
-            total: round(total),
+            total: mode === 'platformer' ? total : round(total),
             ...scores,
         };
     });
 
-    // Sort by total score
+    // Sort by total score (or by count for platformer)
     return [res.sort((a, b) => b.total - a.total), errs];
 }

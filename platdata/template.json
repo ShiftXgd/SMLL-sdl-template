@@ -1,0 +1,19 @@
+{
+    "id": 116584126,
+    "name": "1 last triple",
+    "author": "Slippedcake",
+    "creators": ["Slippedcake"],
+    "verifier": "Slippedcake",
+    "verification": "https://www.youtube.com/watch?v=8AgL9kvKSxQ",
+    "percentToQualify": "100",
+    "password": "Free to copy",
+    "records": [
+        {
+            "user": "WimpieBok",
+            "link": "https://www.youtube.com/watch?v=Jxcxhgh6jJU",
+            "hz": 360,
+            "time": 100
+        }
+    ],
+    "inwhatpack": []
+}

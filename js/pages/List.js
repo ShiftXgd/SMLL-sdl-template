@@ -129,7 +129,10 @@ export default {
 
                             <div class="level-detail__right-col">
                                 <h2 class="idfkwhattonamethis">Records</h2>
-                                <p v-if="globalRank(level.path) <= 75">
+                                <p v-if="store.listMode === 'platformer'">
+                                    Complete the level within the time limit to qualify.
+                                </p>
+                                <p v-else-if="globalRank(level.path) <= 75">
                                     <strong>{{ level.percentToQualify }}%</strong> or better to qualify
                                 </p>
                                 <p v-else-if="globalRank(level.path) <= 150">
@@ -140,7 +143,8 @@ export default {
                                 <table class="records">
                                     <tr v-for="record in level.records" class="record">
                                         <td class="percent">
-                                            <p>{{ record.percent }}%</p>
+                                            <p v-if="record.time !== undefined">{{ formatTime(record.time) }}</p>
+                                            <p v-else>{{ record.percent }}%</p>
                                         </td>
                                         <td class="user">
                                             <a :href="record.link" target="_blank" class="type-label-lg">
@@ -271,6 +275,17 @@ export default {
     methods: {
         embed,
         score,
+        // ADDED: Time formatting method to turn seconds into MM:SS.SS strings
+        formatTime(seconds) {
+            if (!seconds) return '--:--';
+            const mins = Math.floor(seconds / 60);
+            const secsNum = seconds % 60;
+            
+            // If it's a whole number, don't include decimals
+            const secs = secsNum % 1 === 0 ? secsNum.toString() : secsNum.toFixed(2);
+            
+            return `${mins}:${secs.padStart(secs.includes('.') ? 5 : 2, '0')}`;
+        },
         async loadList() {
             this.loading = true;
             this.selectedPath = null;
@@ -341,7 +356,7 @@ export default {
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric',
-            });
+                });
         },
         startToniAnimation() {
             const full = this.toniFullText;

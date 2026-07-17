@@ -159,6 +159,10 @@ input[type="number"],
     line-height: 20px;
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
 }
 .type-label-lg::before {
     content: "";

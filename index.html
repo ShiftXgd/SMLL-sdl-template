@@ -48,16 +48,19 @@
             </div>
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
-                    <span class="type-label-lg">List</span>
+                <span class="type-label-lg" style="margin-right: 20px !important;">List</span>
                 </router-link>
                 <router-link class="nav__tab" to="/leaderboard">
                     <span class="type-label-lg">Leaderboard</span>
                 </router-link>
+                <router-link class="nav__tab" to="/platformer">
+                    <span class="type-label-lg">Platformer Leaderboard</span>  <!-- NEW -->
+                </router-link>
                 <router-link class="nav__tab" to="/roulette">
                     <span class="type-label-lg">Roulette</span>
                 </router-link>
-                <div id="pack-select-container"></div>
                 <div class="nav__actions">
+                    <div id="pack-select-container"></div>
                     <button
                         class="nav__icon"
                         @click.prevent="store.toggleDark()"

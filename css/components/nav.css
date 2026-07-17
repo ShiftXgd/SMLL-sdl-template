@@ -98,10 +98,7 @@
 }
 
 .nav .custom-select {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     min-width: 160px;
     font-family: 'Lexend Deca', Arial, sans-serif;
     font-weight: 700;
@@ -110,7 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    margin-left: 50px;
     padding: 0;
     line-height: 1;
 }
@@ -188,6 +185,11 @@
     font-weight: 700;
     margin: 0;
     line-height: 1.2;
+}
+
+
+#pack-select-container {
+    margin-left: auto;
 }
 
 .nav .custom-select__dropdown li.selected,
