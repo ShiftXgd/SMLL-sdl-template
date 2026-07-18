@@ -1,6 +1,6 @@
 {
     "id": 123014887,
-    "name": "IamNOTalive",
+    "name": "IamN0Talive",
     "author": "Grump",
     "creators": ["Grump, Slippedcake"],
     "verifier": "Grump",
@@ -17,6 +17,12 @@
         {
             "user": "Beli9002",
             "link": "https://drive.google.com/file/d/1jYuhzzhyl_McSS-9tOFmYZ_4lMdmS5fW/view?usp=drivesdk",
+            "percent": 100,
+            "hz": 60
+        },
+        {
+            "user": "dact",
+            "link": "https://youtu.be/bwUz-5g49oY",
             "percent": 100,
             "hz": 60
         }
