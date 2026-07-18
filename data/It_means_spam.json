@@ -31,6 +31,12 @@
             "link": "https://www.youtube.com/watch?v=Vi712jNHCVI",
             "percent": 100,
             "hz": 60
+        },
+        {
+            "user": "dact",
+            "link": "https://youtu.be/bwUz-5g49oY",
+            "percent": 100,
+            "hz": 60
         }
     ],
     "inwhatpack": ["spamtrilogy"]
