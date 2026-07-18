@@ -8,5 +8,11 @@
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
+        {
+            "user": "dact",
+            "link": "https://youtu.be/bwUz-5g49oY",
+            "percent": 100,
+            "hz": 60
+        }
     ]
 }
