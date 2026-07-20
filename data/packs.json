@@ -55,5 +55,10 @@
     "id": "___ ___ pack",
     "name": "___ ___ Pack",
     "color": "#FFD1DF"
+  },
+  {
+    "id": "waveexpert",
+    "name": "Wave expert Pack",
+    "color": "FF0000"
   }
 ] 
