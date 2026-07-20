@@ -8,5 +8,11 @@
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
+        {
+            "user": "Fernandez",
+            "link": "https://drive.google.com/file/d/1VEGWuN7qlMRIpc6cRwyb9nZATzchALE-/view?usp=sharing",
+            "percent": 100,
+            "hz": 60
+        }
     ]
 }
