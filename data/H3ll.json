@@ -8,6 +8,12 @@
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
+        {
+            "user": "Fernandez",
+            "link": "https://youtu.be/5cHNjWLVP0Q",
+            "percent": 100,
+            "hz": 360
+        }
     ],
     "inwhatpack": ["waveexpert"]
 }
