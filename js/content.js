@@ -6,12 +6,12 @@ import { round, score } from './score.js';
 const dir = '/data';
 
 export async function fetchList(mode = 'classic') {
-    const dir = mode === 'platformer' ? '/platdata' : '/data';
-    const listFile = mode === 'platformer' ? '_platlist.json' : '_list.json';
+    const dir = '/data';
+    const listFile = '_list.json';
     const listResult = await fetch(`${dir}/${listFile}`);
     try {
         const list = await listResult.json();
-        return await Promise.all(
+        const levels = await Promise.all(
             list.map(async (path, rank) => {
                 const levelResult = await fetch(`${dir}/${path}.json`);
                 try {
@@ -32,6 +32,9 @@ export async function fetchList(mode = 'classic') {
                 }
             }),
         );
+        return mode === 'platformer'
+            ? levels.filter(([level]) => level?.type === 'platformer')
+            : levels;
     } catch {
         console.error(`Failed to load list.`);
         return null;

@@ -1,4 +1,4 @@
-import { fetchLeaderboard } from '../content.js';
+import { fetchLeaderboard, fetchList } from '../content.js';
 import { localize } from '../util.js';
 import { score } from '../score.js';
 
@@ -116,7 +116,7 @@ export default {
                 if (pack.id === 'all' || pack.id === 'top5' || pack.id === 'top10') return false;
                 const packLevels = this.levels.filter(l => Array.isArray(l.inwhatpack) && l.inwhatpack.includes(pack.id));
                 return packLevels.length > 0 && packLevels.every(l => (
-                    (Array.isArray(l.records) && l.records.some(r => r.user && r.user.toLowerCase() === user.toLowerCase() && r.percent === 100))
+                    (Array.isArray(l.records) && l.records.some(r => r.user && r.user.toLowerCase() === user.toLowerCase()))
                     || (l.verifier && l.verifier.toLowerCase() === user.toLowerCase())
                 ));
             });
@@ -134,29 +134,28 @@ export default {
             this.packs = await packsRes.json();
         } catch {}
         try {
-            const listRes = await fetch('/platdata/_platlist.json');
-            if (!listRes.ok) throw new Error(`HTTP ${listRes.status}`);
-            const list = await listRes.json();
-            this.levels = await Promise.all(list.map(async (path) => {
-                const res = await fetch(`/platdata/${path}.json`);
-                return await res.json();
-            }));
+            const levelResults = await fetchList('platformer');
+            this.levels = levelResults.filter(([level]) => level).map(([level]) => level);
             
             const userRecords = {};
-            this.levels.forEach(level => {
+            this.levels.forEach((level, levelIndex) => {
                 level.records?.forEach(record => {
-                    if (!userRecords[record.user]) {
-                        userRecords[record.user] = {
-                            user: record.user,
+                    const existingUser = Object.keys(userRecords).find(
+                        user => user.toLowerCase() === record.user.toLowerCase(),
+                    );
+                    const userKey = existingUser || record.user;
+                    if (!userRecords[userKey]) {
+                        userRecords[userKey] = {
+                            user: userKey,
                             total: 0,
                             verified: [],
                             completed: [],
                             progressed: []
                         };
                     }
-                    const levelRank = list.indexOf(level.path) + 1; 
+                    const levelRank = levelIndex + 1;
                     const earnedPoints = score(levelRank, 100, level.percentToQualify || 100);
-                    userRecords[record.user].total += earnedPoints;
+                    userRecords[userKey].total += earnedPoints;
                     
                     let cleanTime = '--:--';
                     if (record.time !== undefined && record.time !== null) {
@@ -173,7 +172,7 @@ export default {
                     }
 
                     const recordPayload = {
-                        rank: userRecords[record.user].total,
+                        rank: levelRank,
                         level: level.name,
                         link: record.link,
                         percent: record.percent,

@@ -1,0 +1,20 @@
+{
+    "id": 900000002,
+    "name": "Example Platformer Tower",
+    "type": "platformer",
+    "author": "Example Author",
+    "creators": ["Example Author"],
+    "verifier": "Example Author",
+    "verification": "https://example.com/example-platformer-tower",
+    "percentToQualify": "100",
+    "password": "Free to copy",
+    "records": [
+        {
+            "user": "Fernandez",
+            "link": "https://example.com/completion-tower-fernandez",
+            "time": 95,
+            "hz": 60
+        }
+    ],
+    "inwhatpack": []
+}
