@@ -61,6 +61,12 @@
             "link": "https://www.youtube.com/live/_4DLq1-OFMg?si=EmbA7WvyA1rQNYIY&t=1783",
             "percent": 100,
             "hz": 240
+        },
+        {
+            "user": "Taosap",
+            "link": "https://youtu.be/hPY6boZRH_E",
+            "percent": 100,
+            "hz": 60
         }
     ]
 }
