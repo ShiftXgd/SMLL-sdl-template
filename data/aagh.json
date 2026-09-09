@@ -8,6 +8,12 @@
     "percentToQualify": "100",
     "password": "Free to copy",
     "records": [
+        {
+            "user": "Fernandez",
+            "link": "https://youtu.be/ed3YIzQb7QU",
+            "percent": 100,
+            "hz": 60
+        }
     ],
     "inwhatpack": ["spamtrilogy"]
 }
