@@ -7,7 +7,7 @@ const dir = '/data';
 
 export async function fetchList(mode = 'classic') {
     const dir = '/data';
-    const listFile = '_list.json';
+    const listFile = mode === 'platformer' ? '_platlist.json' : '_list.json';
     const listResult = await fetch(`${dir}/${listFile}`);
     try {
         const list = await listResult.json();

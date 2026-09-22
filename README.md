@@ -15,7 +15,6 @@ The website isn't loading! What can I do?
 - Since no webhost is perfect, downtime is expected. You can either wait till the
   website is back online or you can do some behind the scene stuff and run it
   locally.
-
 ---
 
 ### Usage FAQ
@@ -25,6 +24,9 @@ How do I add levels to the list?
 - Use one of the provided template json files and modify the details to fill in the details
   accordingly. If there are any errors, the site will not load, or you will get a pop up
   saying which level isn't loading.
+- Add classic level filenames without `.json` to `data/_list.json`. Add platformer level
+  filenames without `.json` to `data/_platlist.json`; their order in that file determines
+  their platformer placement for both the platformer list and leaderboard.
 
 How do I add records to the list?
 
