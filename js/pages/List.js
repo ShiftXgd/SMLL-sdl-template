@@ -171,7 +171,7 @@ export default {
             </div>
 
             <div v-else class="level-feed-empty">
-                <p>No levels found bruh (ノಠ益ಠ)ノ彡┻━┻</p>
+                <p>No levels found bru (ノಠ益ಠ)ノ彡┻━┻</p>
             </div>
 
             <footer class="list-footer">
